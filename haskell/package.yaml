@@ -1,0 +1,39 @@
+name:                aoc2024
+version:             0.1.0.0
+github:              "kephas/aoc2024"
+license:             BSD3
+author:              "Pierre Thierry"
+maintainer:          "pierre@nothos.net"
+copyright:           "2024 Pierre Thierry"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+synopsis:            Advent of Code 2024 in Haskell
+description:         Advent of Code 2024 in Haskell
+
+dependencies:
+- base >= 4.7 && < 5
+
+language: Haskell2010
+
+default-extensions:
+- ImportQualifiedPost
+- BlockArguments
+
+library:
+  source-dirs: src
+
+tests:
+  aoc2024-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall
+    dependencies:
+    - aoc2024
+    - hspec
